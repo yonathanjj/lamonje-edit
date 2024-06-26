@@ -6,10 +6,9 @@
     <title>Contact Us</title>
     <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet"> <!-- Example font link (replace with your preferred font) -->
 <style>
-/* Reset and basic styling */
 body {
-    background-color: #ffdc82;
-    color: white;
+    background-color: #ffa6c1;
+    color: #333; /* Dark text color */
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
@@ -23,12 +22,16 @@ header {
     padding: 20px 50px;
 }
 
+.logo {
+    cursor: pointer; /* Make the logo clickable */
+}
+
 .logo img {
     height: 50px;
 }
 
 nav a {
-    color: white;
+    color: #333; /* Dark text color */
     text-decoration: none;
     margin-left: 20px;
     font-size: 18px;
@@ -42,21 +45,23 @@ nav a:hover {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    align-items: flex-start;
+    align-items: center; /* Center items vertically */
     padding: 50px;
+    animation: slideInAnimation 1s ease-in-out;
 }
 
 .left-content {
     flex: 1;
     margin-bottom: 30px;
+    text-align: center; /* Center text */
 }
 
 .unique-text {
     font-family: 'Shadows Into Light', cursive;
-    font-size: 48px; /* Increased font size */
+    font-size: 48px;
     font-weight: bold;
     line-height: 1.2;
-    margin: 0 auto; /* Center horizontally */
+    margin: 0 auto;
     animation: floatAnimation 2s ease-in-out infinite;
 }
 
@@ -73,15 +78,20 @@ nav a:hover {
     font-size: 18px;
     line-height: 1.6;
     margin-top: 20px;
+    text-align: center; /* Center paragraph text */
 }
 
 .right-content {
     flex: 1;
-    text-align: left;
+    text-align: center; /* Center paragraph text */
 }
 
 .contact-info {
     margin-bottom: 30px;
+}
+
+.contact-info p {
+    margin-bottom: 10px; /* Adjust spacing between contact info paragraphs */
 }
 
 .contact-email {
@@ -90,6 +100,7 @@ nav a:hover {
 
 .social-links {
     margin-top: 20px;
+    text-align: center; /* Center the social links */
 }
 
 .social-text {
@@ -99,10 +110,15 @@ nav a:hover {
 }
 
 .social-link {
-    color: white;
+    color: #333; /* Dark text color */
     text-decoration: none;
-    margin-right: 20px;
+    margin: 0 10px; /* Adjust spacing between social links */
     font-size: 16px;
+    transition: transform 0.3s ease; /* Add transition for hover effect */
+}
+
+.social-link:hover {
+    transform: translateY(-5px); /* Apply upward movement on hover */
 }
 
 footer {
@@ -130,7 +146,7 @@ footer {
 }
 
 .handwritten-link {
-    color: white;
+    color: #333; /* Dark text color */
     text-decoration: none;
     margin-left: 20px;
     font-size: 14px;
@@ -139,6 +155,7 @@ footer {
 @media screen and (max-width: 768px) {
     .main-content {
         flex-direction: column;
+        padding: 30px 20px; /* Adjust padding for smaller screens */
     }
 
     .unique-text {
@@ -158,6 +175,27 @@ footer {
     .quote-text {
         margin-top: 10px;
     }
+
+    header {
+        padding: 10px 20px; /* Adjust header padding for smaller screens */
+    }
+
+    .logo img {
+        height: 40px; /* Adjust logo size for smaller screens */
+    }
+
+    nav {
+        flex-direction: column; /* Stack navigation links vertically */
+        align-items: center;
+    }
+
+    nav a {
+        margin: 10px 0; /* Adjust margin for navigation links */
+    }
+
+    .social-links {
+        margin-top: 10px; /* Reduce top margin for social links */
+    }
 }
 
 @keyframes fadeInAnimation {
@@ -169,25 +207,38 @@ footer {
     }
 }
 
+@keyframes slideInAnimation {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
 </style>
 </head>
 <body>
     <header>
         <div class="logo">
-            <img src="lamonjelogo2.png" alt="Company Logo">
+            <a href="index.html">
+                <img src="lamonjelogo2.png" alt="Company Logo">
+            </a>
         </div>
         <nav>
             <a href="work.html">Work</a>
             <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
+            <a href="connect.html">Contact</a>
         </nav>
     </header>
 
     <section class="main-content">
         <div class="left-content">
-            <h2 class="unique-text">Let's Connect and Let's Tell Your Story</h2>
+            <h2 class="unique-text">Let's Connect and <span style="font-weight: 600;">Let's Tell Your Story</span></h2>
         </div>
-                    <p class="quote-text">Throughout the past 25 years, our clients have entrusted us with their most significant challenges. From this commitment stems our determination to transform ideas into action, creating iconic brands that propel organizations forward.</p>
+        <div class="right-content">
+            <p class="quote-text">Our clients entrust us with the complex task of <span style="font-weight: 600;">bringing their stories to life</span>. They understand the power of a well-crafted narrative, and they trust our expertise to navigate the complexities of storytelling across events, content creation, and strategic marketing.</p>
             <br>
             <br>
             <br>
@@ -198,11 +249,6 @@ footer {
                 <p>+957 8746 4754 Ethiopia</p>
                 <p>+594 7468 8475 Kigali Rwanda</p>
             </div>
-            <div class="social-links">
-                <p class="social-text">Follow us on:</p>
-                <a href="#" class="social-link">Facebook</a>
-                <a href="#" class="social-link">Instagram</a>
-            </div>
         </div>
     </section>
 
@@ -210,29 +256,32 @@ footer {
         <div class="bottom-left">
             <p class="copyright">&copy; 2024 LaMonje</p>
         </div>
-
+        <div class="bottom-right">
+            <div class="social-links">
+                <p class="social-text">Follow us on:</p>
+                <a href="#" class="social-link">Facebook</a>
+                <a href="#" class="social-link">Instagram</a>
+            </div>
+        </div>
     </footer>
 
     <script>
-    // Example JavaScript animation
-document.addEventListener('DOMContentLoaded', function() {
-    const handwrittenElements = document.querySelectorAll('.handwritten-text, .handwritten-link');
+    document.addEventListener('DOMContentLoaded', function() {
+        const handwrittenElements = document.querySelectorAll('.handwritten-text, .handwritten-link');
 
-    handwrittenElements.forEach(element => {
-        element.style.opacity = '0';
-        element.style.transform = 'translateY(20px)';
-        element.style.transition = 'opacity 1s ease, transform 1s ease';
-    });
-
-    setTimeout(() => {
         handwrittenElements.forEach(element => {
-            element.style.opacity = '1';
-            element.style.transform = 'translateY(0)';
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'opacity 1s ease, transform 1s ease';
         });
-    }, 500); // Adjust timing as needed
-});
 
+        setTimeout(() => {
+            handwrittenElements.forEach(element => {
+                element.style.opacity = '1';
+                element.style.transform = 'translateY(0)';
+            });
+        }, 50); // Adjust timing as needed
+    });
     </script>
 </body>
 </html>
-
