@@ -29,7 +29,7 @@
         }
 
         header.nav-scrolled {
-            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background on scroll */
+            background-color: transparent; /* Keep the navigation bar transparent on scroll */
         }
 
         .logo {
@@ -55,30 +55,76 @@
 
         nav a:hover {
             color: #007BFF; /* Change color on hover */
+            text-decoration: underline; /* Underline on hover */
         }
 
         .main-content {
             padding: 100px 50px;
-            text-align: center;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
         }
 
-        .main-content h1 {
-            font-size: 48px;
+        .left-content {
+            flex: 1;
+        }
+
+        .right-content {
+            flex: 2;
+        }
+
+        .about-navigation {
             margin-bottom: 30px;
         }
 
-        .main-content p {
+        .about-navigation a {
+            display: block;
+            color: #333;
+            text-decoration: none;
             font-size: 18px;
-            line-height: 1.6;
-            margin-bottom: 30px;
+            margin-bottom: 10px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+            font-family: 'Playwrite USA Traditional', cursive; /* Apply Playwrite USA Traditional font */
         }
 
-        .main-content img {
-            max-width: 100%;
+        .about-navigation a:hover {
+            color: #007BFF;
+        }
+
+        .section-header {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            position: relative;
+            font-family: 'Playwrite USA Traditional', cursive; /* Apply Playwrite USA Traditional font */
+        }
+
+        .section-header:after {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 2px;
+            background-color: #333;
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+        }
+
+        .service-list, .partner-list {
+            margin-top: 20px;
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .service-list li, .partner-list li {
+            margin-bottom: 8px;
+        }
+
+        .partner-list img {
+            width: 100px; /* Adjust size of partner logos */
             height: auto;
-            border-radius: 8px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            margin-bottom: 30px;
+            margin-bottom: 10px;
         }
 
         @media screen and (max-width: 768px) {
@@ -93,7 +139,7 @@
             nav {
                 flex-direction: column; /* Stack navigation links vertically */
                 align-items: center;
-                background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background for small screens */
+                background-color: transparent; /* Keep the navigation bar transparent for small screens */
                 padding: 10px;
                 position: fixed;
                 top: 0;
@@ -133,10 +179,71 @@
     </header>
 
     <div class="main-content">
-        <h1>About Us</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et libero lectus. Morbi sit amet tincidunt lacus. Suspendisse potenti. Nulla facilisi. Quisque id dui eget lacus tincidunt semper nec eu mauris.</p>
-        <img src="about-image.jpg" alt="About Image">
-        <p>Etiam eget magna at libero lacinia condimentum. Cras lacinia lacus a magna posuere, nec ultricies velit eleifend. Nulla fermentum ex eu risus fermentum, a rutrum lacus tempor.</p>
+        <div class="left-content">
+            <div class="about-navigation">
+                <a href="#about-us">About Us</a>
+                <a href="#services">Services</a>
+                <a href="#partners">Partners & Collab</a>
+            </div>
+        </div>
+        <div class="right-content">
+            <section id="about-us">
+                <div class="section-header">About Us</div>
+                <p>La Monje, founded by Yeabkal Demissew and Bethlehem Ghidey, is not just a creative firm; it is a data-driven storytelling powerhouse. We combine strategic analysis with captivating narratives to craft impactful events, curate compelling multimedia content, and develop innovative marketing campaigns.</p>
+                <p><strong>Our Structure:</strong> We operate at the intersection of creativity and data to craft impactful events, compelling multimedia content, and strategic marketing campaigns. This two-pronged approach ensures our work resonates with target audiences and drives tangible results for our clients.</p>
+                <p><strong>Our Approach:</strong> We believe powerful storytelling is the key to forging connections and achieving results. We combine strategic data analysis with captivating narratives. We are not just storytellers; we're passionate creatives who translate your vision into experiences that resonate and drive results.</p>
+                <p><strong>Our Model:</strong> We operate under a Management by Objectives (MBO) model. We collaboratively set clear, measurable goals with our clients at the outset of each project. This ensures alignment between our efforts and their desired outcomes, fostering transparency and driving results.</p>
+            </section>
+
+            <section id="services">
+                <div class="section-header">Services</div>
+                <ul class="service-list">
+                    <li><strong>Impactful Events:</strong></li>
+                    <ul>
+                        <li>Conferences</li>
+                        <li>Exhibitions</li>
+                        <li>Trade shows</li>
+                        <li>Networking events</li>
+                        <li>Festivals</li>
+                        <li>Launchings</li>
+                    </ul>
+                    <li><strong>Compelling Content:</strong></li>
+                    <ul>
+                        <li>Blog</li>
+                        <li>Infographic</li>
+                        <li>Social media</li>
+                        <li>Case study</li>
+                        <li>Magazine</li>
+                        <li>Communication materials</li>
+                    </ul>
+                    <li><strong>Strategic Marketing:</strong></li>
+                    <ul>
+                        <li>Social media marketing</li>
+                        <li>Content marketing</li>
+                        <li>Email marketing</li>
+                        <li>Public relations</li>
+                        <li>Print marketing</li>
+                        <li>Direct Marketing</li>
+                    </ul>
+                </ul>
+            </section>
+
+            <section id="partners">
+                <div class="section-header">Partners & Collab</div>
+                <ul class="partner-list">
+                    <li>Action aid Ethiopia</li>
+                    <li>Aslan Business Group</li>
+                    <li>Hub of African Fashion Week</li>
+                    <li>Gulit saving and credit cooperativeassociation</li>
+                    <li>Gulit Mart</li>
+                    <li>Golden Valley school of business and technology</li>
+                    <li>Yewenze Lij economic forum</li>
+                    <li>Big Harvest</li>
+                    <li>Ice Hawassa</li>
+                    <li>Rotaract Club of Hawassa</li>
+                </ul>
+            </section>
+        </div>
     </div>
 
     <footer>
