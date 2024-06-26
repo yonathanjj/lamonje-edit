@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decor Company</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="lamonjelogo2.png" alt="Company Logo">
+        </div>
+        <nav>
+            <a href="work.html">Work</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <div class="background-text">La-monje</div>
+        <div class="image-grid">
+            <img src="aid3.jpg" alt="Image 1">
+            <img src="aid4.jpg" alt="Image 2">
+            <img src="bazaar14.png" alt="Image 3">
+            <img src="bazaar15.png" alt="Image 4">
+            <img src="aid3.jpg" alt="Image 5">
+            <img src="bazaar15.png" alt="Image 6">
+            <img src="aid4.jpg" alt="Image 7">
+            <img src="bazaar14.png" alt="Image 8">
+            <img src="aid3.jpg" alt="Image 9">
+            <img src="aid4.jpg" alt="Image 10">
+            <img src="bazaar14.png" alt="Image 11">
+            <img src="aid3.jpg" alt="Image 12">
+            <img src="bazaar15.png" alt="Image 13">
+            <img src="aid4.jpg" alt="Image 14">
+            <img src="bazaar14.png" alt="Image 15">
+            <img src="aid3.jpg" alt="Image 16">
+        </div>
+    </main>
+<style>
+    body {
+    background-color: #CDF2FA;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevent default scrolling */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.logo img {
+    height: 50px; /* Adjust this as needed */
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    margin: 0 15px;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'Playfair Display', serif;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.background-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 100px;
+    color: rgba(0, 0, 0, 0.1);
+    z-index: -1;
+    font-family: 'Playfair Display', serif;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 20px;
+    overflow: hidden; /* Hide overflow of images */
+    height: 100vh; /* Full height */
+    position: relative;
+}
+
+.image-grid img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+    border-radius: 20px; /* Rounded corners */
+}
+
+.image-grid img:hover {
+    transform: scale(1.1);
+}
+</style>
+<script>
+    const imageGrid = document.querySelector('.image-grid');
+const images = Array.from(imageGrid.querySelectorAll('img'));
+
+const numRows = 4; // Number of rows
+const numCols = 4; // Number of columns
+
+let scrollOffset = 0;
+const scrollSpeed = 0.5; // Adjust this value for scroll speed
+
+// Clone images for infinite loop effect
+images.forEach((img) => {
+    const clone = img.cloneNode(true);
+    imageGrid.appendChild(clone);
+});
+
+function updateScroll() {
+    scrollOffset += scrollSpeed;
+    const gridHeight = imageGrid.clientHeight / 2; // Half of the grid height for seamless loop
+
+    images.forEach((img, index) => {
+        const row = Math.floor(index / numCols);
+        const offset = scrollOffset + (row % 2 === 0 ? -gridHeight : gridHeight); // Alternate directions
+        img.style.transform = `translateY(${offset}px)`;
+    });
+
+    if (scrollOffset >= gridHeight) {
+        scrollOffset = 0;
+    }
+
+    requestAnimationFrame(updateScroll);
+}
+
+updateScroll();
+</script>
