@@ -1,1 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet"> <!-- Example font link (replace with your preferred font) -->
+<style>
+/* Reset and basic styling */
+body {
+    background-color: #ffdc82;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    animation: fadeInAnimation 2s ease-in;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+}
+
+.logo img {
+    height: 50px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 18px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.main-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 50px;
+}
+
+.left-content {
+    flex: 1;
+    margin-bottom: 30px;
+}
+
+.unique-text {
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 48px; /* Increased font size */
+    font-weight: bold;
+    line-height: 1.2;
+    margin: 0 auto; /* Center horizontally */
+    animation: floatAnimation 2s ease-in-out infinite;
+}
+
+@keyframes floatAnimation {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.quote-text {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-top: 20px;
+}
+
+.right-content {
+    flex: 1;
+    text-align: left;
+}
+
+.contact-info {
+    margin-bottom: 30px;
+}
+
+.contact-email {
+    font-weight: bold;
+}
+
+.social-links {
+    margin-top: 20px;
+}
+
+.social-text {
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.social-link {
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 16px;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.bottom-left {
+    flex: 1;
+}
+
+.bottom-right {
+    flex: 1;
+    text-align: right;
+}
+
+.handwritten-text {
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 14px;
+}
+
+.handwritten-link {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 14px;
+}
+
+@media screen and (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+    }
+
+    .unique-text {
+        font-size: 36px;
+    }
+
+    .left-content {
+        order: 2;
+        text-align: center;
+    }
+
+    .right-content {
+        order: 1;
+        text-align: center;
+    }
+
+    .quote-text {
+        margin-top: 10px;
+    }
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+</style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="lamonjelogo2.png" alt="Company Logo">
+        </div>
+        <nav>
+            <a href="work.html">Work</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <section class="main-content">
+        <div class="left-content">
+            <h2 class="unique-text">Let's Connect and Let's Tell Your Story</h2>
+        </div>
+                    <p class="quote-text">Throughout the past 25 years, our clients have entrusted us with their most significant challenges. From this commitment stems our determination to transform ideas into action, creating iconic brands that propel organizations forward.</p>
+            <br>
+            <br>
+            <br>
+            <div class="contact-info">
+                <p>For Contact:</p>
+                <p class="contact-email">service@lamonje.com</p>
+                <p>For Calls:</p>
+                <p>+957 8746 4754 Ethiopia</p>
+                <p>+594 7468 8475 Kigali Rwanda</p>
+            </div>
+            <div class="social-links">
+                <p class="social-text">Follow us on:</p>
+                <a href="#" class="social-link">Facebook</a>
+                <a href="#" class="social-link">Instagram</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="bottom-left">
+            <p class="copyright">&copy; 2024 LaMonje</p>
+        </div>
+
+    </footer>
+
+    <script>
+    // Example JavaScript animation
+document.addEventListener('DOMContentLoaded', function() {
+    const handwrittenElements = document.querySelectorAll('.handwritten-text, .handwritten-link');
+
+    handwrittenElements.forEach(element => {
+        element.style.opacity = '0';
+        element.style.transform = 'translateY(20px)';
+        element.style.transition = 'opacity 1s ease, transform 1s ease';
+    });
+
+    setTimeout(() => {
+        handwrittenElements.forEach(element => {
+            element.style.opacity = '1';
+            element.style.transform = 'translateY(0)';
+        });
+    }, 500); // Adjust timing as needed
+});
+
+    </script>
+</body>
+</html>
 
