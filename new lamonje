@@ -5,7 +5,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Decor Company</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #CDF2FA;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: black;
+            margin: 0 15px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .background-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 100px;
+            color: #000000;
+            z-index: -1;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .image-grid img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease-in-out;
+            border-radius: 20px;
+        }
+
+        .image-grid img:hover {
+            transform: scale(1.1);
+        }
+
+        .image-grid .col1, .image-grid .col3 {
+            animation: scrollUp 10s linear infinite;
+        }
+
+        .image-grid .col2, .image-grid .col4 {
+            animation: scrollDown 10s linear infinite;
+        }
+
+        @keyframes scrollUp {
+            0% { transform: translateY(100%); }
+            100% { transform: translateY(-100%); }
+        }
+
+        @keyframes scrollDown {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(100%); }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -21,143 +97,23 @@
     <main>
         <div class="background-text">La-monje</div>
         <div class="image-grid">
-            <div class="column">
-                <img src="aid3.jpg" alt="Image 1">
-                <img src="aid4.jpg" alt="Image 2">
-                <img src="bazaar14.png" alt="Image 3">
-                <img src="bazaar15.png" alt="Image 4">
-                <img src="aid3.jpg" alt="Image 5">
-                <img src="bazaar15.png" alt="Image 6">
-            </div>
-            <div class="column">
-                <img src="aid4.jpg" alt="Image 7">
-                <img src="bazaar14.png" alt="Image 8">
-                <img src="aid3.jpg" alt="Image 9">
-                <img src="aid4.jpg" alt="Image 10">
-                <img src="bazaar14.png" alt="Image 11">
-                <img src="aid3.jpg" alt="Image 12">
-            </div>
-            <div class="column">
-                <img src="bazaar15.png" alt="Image 13">
-                <img src="aid4.jpg" alt="Image 14">
-                <img src="bazaar14.png" alt="Image 15">
-                <img src="aid3.jpg" alt="Image 16">
-                <img src="bazaar15.png" alt="Image 17">
-                <img src="aid4.jpg" alt="Image 18">
-            </div>
-            <div class="column">
-                <img src="bazaar14.png" alt="Image 19">
-                <img src="aid3.jpg" alt="Image 20">
-                <img src="bazaar15.png" alt="Image 21">
-                <img src="aid4.jpg" alt="Image 22">
-                <img src="bazaar14.png" alt="Image 23">
-                <img src="aid3.jpg" alt="Image 24">
-            </div>
+            <div class="col1"><img src="aid3.jpg" alt="Image 1"></div>
+            <div class="col2"><img src="aid4.jpg" alt="Image 2"></div>
+            <div class="col3"><img src="bazaar14.png" alt="Image 3"></div>
+            <div class="col4"><img src="bazaar15.png" alt="Image 4"></div>
+            <div class="col1"><img src="aid3.jpg" alt="Image 5"></div>
+            <div class="col2"><img src="bazaar15.png" alt="Image 6"></div>
+            <div class="col3"><img src="aid4.jpg" alt="Image 7"></div>
+            <div class="col4"><img src="bazaar14.png" alt="Image 8"></div>
+            <div class="col1"><img src="aid3.jpg" alt="Image 9"></div>
+            <div class="col2"><img src="aid4.jpg" alt="Image 10"></div>
+            <div class="col3"><img src="bazaar14.png" alt="Image 11"></div>
+            <div class="col4"><img src="aid3.jpg" alt="Image 12"></div>
+            <div class="col1"><img src="bazaar15.png" alt="Image 13"></div>
+            <div class="col2"><img src="aid4.jpg" alt="Image 14"></div>
+            <div class="col3"><img src="bazaar14.png" alt="Image 15"></div>
+            <div class="col4"><img src="aid3.jpg" alt="Image 16"></div>
         </div>
     </main>
-    <script src="script.js"></script>
-<style>
- body {
-    background-color: #CDF2FA;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    overflow: hidden; /* Prevent default scrolling */
-}
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    position: fixed;
-    width: 100%;
-    background: rgba(205, 242, 250, 0.8); /* Slightly transparent background */
-    z-index: 1000; /* Ensure the header is above all content */
-}
-
-.logo img {
-    height: 50px; /* Adjust this as needed */
-}
-
-nav a {
-    text-decoration: none;
-    color: black;
-    margin: 0 15px;
-    font-size: 18px;
-    font-weight: bold;
-    font-family: 'Playfair Display', serif;
-}
-
-nav a:hover {
-    text-decoration: underline;
-}
-
-.background-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 100px;
-    color: black;
-    font-weight: bold;
-    z-index: -1;
-    font-family: 'Playfair Display', serif;
-}
-
-.image-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    padding: 120px 20px 20px; /* Padding top to make space for the fixed header */
-    height: 100vh; /* Full height */
-    overflow: hidden; /* Hide overflow of images */
-    position: relative;
-}
-
-.image-grid .column {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    position: relative;
-}
-
-.image-grid img {
-    width: 100%;
-    height: auto;
-    transition: transform 0.3s ease-in-out;
-    border-radius: 20px; /* Rounded corners */
-}
-
-.image-grid img:hover {
-    transform: scale(1.1);
-}
-
-/* Responsive design */
-@media (max-width: 600px) {
-    .image-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-</style>
-<script>
-const imageGrid = document.querySelector('.image-grid');
-const columns = Array.from(imageGrid.querySelectorAll('.column'));
-
-const scrollSpeed = 2; // Adjust this value for scroll speed
-
-function updateScroll() {
-    const scrollY = window.scrollY;
-
-    columns.forEach((column, index) => {
-        const direction = index % 2 === 0 ? -1 : 1;
-        const offset = scrollY * scrollSpeed * direction;
-        column.style.transform = `translateY(${offset % window.innerHeight}px)`;
-    });
-
-    requestAnimationFrame(updateScroll);
-}
-
-window.addEventListener('scroll', updateScroll);
-updateScroll();
-</script>
+</body>
+</html>
