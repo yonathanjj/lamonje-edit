@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset and basic styling */
+        body {
+            background-color: #CDF2FA; /* Light blue background */
+            color: #333; /* Dark text color */
+            font-family: 'Playfair Display', serif;
+            margin: 0;
+            padding: 0;
+            animation: fadeInAnimation 2s ease-in;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            position: fixed;
+            width: 100%;
+            z-index: 1000; /* Ensure the header stays on top */
+            background-color: transparent; /* Transparent background */
+            transition: background-color 0.3s ease; /* Smooth transition */
+        }
+
+        header.nav-scrolled {
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background on scroll */
+        }
+
+        .logo {
+            cursor: pointer; /* Make the logo clickable */
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav a {
+            color: #333; /* Dark text color */
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 18px;
+            transition: color 0.3s ease; /* Smooth transition for color change */
+        }
+
+        nav a:hover {
+            color: #007BFF; /* Change color on hover */
+        }
+
+        .main-content {
+            padding: 100px 50px;
+            text-align: center;
+        }
+
+        .main-content h1 {
+            font-size: 48px;
+            margin-bottom: 30px;
+        }
+
+        .main-content p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .main-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        @media screen and (max-width: 768px) {
+            header {
+                padding: 10px 20px; /* Adjust header padding for smaller screens */
+            }
+
+            .logo img {
+                height: 40px; /* Adjust logo size for smaller screens */
+            }
+
+            nav {
+                flex-direction: column; /* Stack navigation links vertically */
+                align-items: center;
+                background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background for small screens */
+                padding: 10px;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                z-index: 999; /* Ensure navigation stays on top */
+                transition: background-color 0.3s ease; /* Smooth transition */
+            }
+
+            nav a {
+                margin: 10px 0; /* Adjust margin for navigation links */
+            }
+        }
+
+        @keyframes fadeInAnimation {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <div class="logo">
+            <a href="index.html">
+                <img src="lamonjelogo2.png" alt="Company Logo">
+            </a>
+        </div>
+        <nav>
+            <a href="work.html">Work</a>
+            <a href="about.html">About</a>
+            <a href="connect.html">Contact</a>
+        </nav>
+    </header>
+
+    <div class="main-content">
+        <h1>About Us</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et libero lectus. Morbi sit amet tincidunt lacus. Suspendisse potenti. Nulla facilisi. Quisque id dui eget lacus tincidunt semper nec eu mauris.</p>
+        <img src="about-image.jpg" alt="About Image">
+        <p>Etiam eget magna at libero lacinia condimentum. Cras lacinia lacus a magna posuere, nec ultricies velit eleifend. Nulla fermentum ex eu risus fermentum, a rutrum lacus tempor.</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 LaMonje</p>
+    </footer>
+
+    <script>
+        // Change header background on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 0) {
+                header.classList.add('nav-scrolled');
+            } else {
+                header.classList.remove('nav-scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
