@@ -14,12 +14,16 @@
         }
 
         header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-            font-family: 'Playfair Display', serif;
-        }
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    font-family: 'Playfair Display', serif;
+    position: fixed;
+    width: 100%;
+    background: rgba(205, 242, 250, 0.8);
+    z-index: 1000;
+}
+
 
         .logo img {
             height: 50px;
@@ -40,36 +44,41 @@
             transform: translate(-50%, -50%);
             font-size: 100px;
             color: #000000;
+            font-weight: bold;
             z-index: -1;
             font-family: 'Playfair Display', serif;
         }
 
         .image-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            padding: 20px;
-            position: relative;
+            display: flex;
+            flex-wrap: nowrap;
             overflow: hidden;
+            position: relative;
+            padding-top: 80px; /* To account for the fixed header */
         }
 
-        .image-grid img {
-            width: 100%;
-            height: auto;
-            transition: transform 0.3s ease-in-out;
-            border-radius: 20px;
-        }
+        .column {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 25%; /* Four columns */
+    gap: 30px; /* Increased gap between columns */
+}
+
+.column:nth-child(even) {
+    /* Remove animation for even columns */
+    animation: none;
+}
+
+.image-grid img {
+    width: 80%; /* Adjust image size as needed */
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+    border-radius: 20px;
+}
+
 
         .image-grid img:hover {
-            transform: scale(1.1);
-        }
-
-        .image-grid .col1, .image-grid .col3 {
-            animation: scrollUp 10s linear infinite;
-        }
-
-        .image-grid .col2, .image-grid .col4 {
-            animation: scrollDown 10s linear infinite;
+            transform: scale(0.9);
         }
 
         @keyframes scrollUp {
@@ -80,6 +89,18 @@
         @keyframes scrollDown {
             0% { transform: translateY(-100%); }
             100% { transform: translateY(100%); }
+        }
+
+        /* Responsive design */
+        @media (max-width: 600px) {
+            .image-grid {
+                flex-direction: column;
+                padding-top: 120px; /* More padding for mobile */
+            }
+            .column {
+                flex: 1 0 auto; /* Full width on mobile */
+                animation: none; /* Disable animation on mobile */
+            }
         }
     </style>
 </head>
@@ -97,22 +118,38 @@
     <main>
         <div class="background-text">La-monje</div>
         <div class="image-grid">
-            <div class="col1"><img src="aid3.jpg" alt="Image 1"></div>
-            <div class="col2"><img src="aid4.jpg" alt="Image 2"></div>
-            <div class="col3"><img src="bazaar14.png" alt="Image 3"></div>
-            <div class="col4"><img src="bazaar15.png" alt="Image 4"></div>
-            <div class="col1"><img src="aid3.jpg" alt="Image 5"></div>
-            <div class="col2"><img src="bazaar15.png" alt="Image 6"></div>
-            <div class="col3"><img src="aid4.jpg" alt="Image 7"></div>
-            <div class="col4"><img src="bazaar14.png" alt="Image 8"></div>
-            <div class="col1"><img src="aid3.jpg" alt="Image 9"></div>
-            <div class="col2"><img src="aid4.jpg" alt="Image 10"></div>
-            <div class="col3"><img src="bazaar14.png" alt="Image 11"></div>
-            <div class="col4"><img src="aid3.jpg" alt="Image 12"></div>
-            <div class="col1"><img src="bazaar15.png" alt="Image 13"></div>
-            <div class="col2"><img src="aid4.jpg" alt="Image 14"></div>
-            <div class="col3"><img src="bazaar14.png" alt="Image 15"></div>
-            <div class="col4"><img src="aid3.jpg" alt="Image 16"></div>
+            <div class="column">
+                <img src="aid3.jpg" alt="Image 1">
+                <img src="aid4.jpg" alt="Image 2">
+                <img src="bazaar14.png" alt="Image 3">
+                <img src="bazaar15.png" alt="Image 4">
+                <img src="aid3.jpg" alt="Image 5">
+                <img src="bazaar15.png" alt="Image 6">
+            </div>
+            <div class="column">
+                <img src="aid4.jpg" alt="Image 7">
+                <img src="bazaar14.png" alt="Image 8">
+                <img src="aid3.jpg" alt="Image 9">
+                <img src="aid4.jpg" alt="Image 10">
+                <img src="bazaar14.png" alt="Image 11">
+                <img src="aid3.jpg" alt="Image 12">
+            </div>
+            <div class="column">
+                <img src="bazaar15.png" alt="Image 13">
+                <img src="aid4.jpg" alt="Image 14">
+                <img src="bazaar14.png" alt="Image 15">
+                <img src="aid3.jpg" alt="Image 16">
+                <img src="bazaar15.png" alt="Image 17">
+                <img src="aid4.jpg" alt="Image 18">
+            </div>
+            <div class="column">
+                <img src="bazaar14.png" alt="Image 19">
+                <img src="aid3.jpg" alt="Image 20">
+                <img src="bazaar15.png" alt="Image 21">
+                <img src="aid4.jpg" alt="Image 22">
+                <img src="bazaar14.png" alt="Image 23">
+                <img src="aid3.jpg" alt="Image 24">
+            </div>
         </div>
     </main>
 </body>
