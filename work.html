@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+USA+Modern&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #FAEDCD;
+            color: #333;
+            font-family: 'Playwrite USA Modern', sans-serif; /* Apply 'Playwrite USA Modern' font to entire page */
+            margin: 0;
+            padding: 0;
+            animation: fadeInAnimation 2s ease-in;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            background-color: transparent;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow at the top of the header */
+        }
+
+        header.nav-scrolled {
+            background-color: #FAEDCD;
+        }
+
+        .logo {
+            cursor: pointer;
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        .main-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: flex-start;
+            padding: 50px;
+            animation: slideInAnimation 1s ease-in-out;
+        }
+
+        .work-item {
+            flex: 1 0 22%; /* Adjust width of work items */
+            margin: 10px;
+            text-align: center;
+            padding: 20px;
+            background-color: #FFF;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow effect */
+            transition: transform 0.3s ease; /* Add hover effect */
+        }
+
+        .work-item:hover {
+            transform: translateY(-5px); /* Move up slightly on hover */
+        }
+
+        .work-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px; /* Rounded corners for images */
+            margin-bottom: 10px;
+        }
+
+        @media screen and (max-width: 768px) {
+            header {
+                padding: 10px 20px;
+            }
+
+            .logo img {
+                height: 40px;
+            }
+
+            nav {
+                flex-direction: column;
+                align-items: center;
+                background-color: #FAEDCD;
+                padding: 10px;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                z-index: 999;
+                transition: background-color 0.3s ease;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow at the top of the mobile navigation */
+            }
+
+            nav a {
+                margin: 10px 0;
+            }
+
+            .main-content {
+                padding: 30px 20px; /* Adjust padding for smaller screens */
+            }
+
+            .work-item {
+                flex: 1 0 48%; /* Adjust width of work items for mobile view */
+            }
+        }
+
+        @keyframes fadeInAnimation {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInAnimation {
+            0% {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <div class="logo">
+            <a href="index.html">
+                <img src="lamonjelogo2.png" alt="Company Logo">
+            </a>
+        </div>
+        <nav>
+            <a href="work.html">Work</a>
+            <a href="about.html">About</a>
+            <a href="connect.html">Contact</a>
+        </nav>
+    </header>
+
+    <div class="main-content">
+        <!-- Work items here -->
+    </div>
+
+    <footer>
+        <p>&copy; 2024 LaMonje</p>
+    </footer>
+
+    <script>
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+                document.getElementById("header").classList.add("nav-scrolled");
+            } else {
+                document.getElementById("header").classList.remove("nav-scrolled");
+            }
+        }
+    </script>
+</body>
+</html>
